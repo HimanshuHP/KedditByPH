@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.himanshu.kedditbyph.commons.adapter.NewsAdapter
-import com.example.himanshu.kedditbyph.commons.inflate
+import com.example.himanshu.kedditbyph.commons.extensions.inflate
 import kotlinx.android.synthetic.main.news_fragment.*
 
 

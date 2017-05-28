@@ -1,6 +1,6 @@
 @file:JvmName("ExtensionsUtils")
 
-package com.example.himanshu.kedditbyph.commons
+package com.example.himanshu.kedditbyph.commons.extensions
 
 import android.view.LayoutInflater
 import android.view.View

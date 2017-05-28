@@ -3,7 +3,7 @@ package com.example.himanshu.kedditbyph.commons.adapter
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.example.himanshu.kedditbyph.R
-import com.example.himanshu.kedditbyph.commons.inflate
+import com.example.himanshu.kedditbyph.commons.extensions.inflate
 
 /**
  * Created by himanshu on 28/05/17.
