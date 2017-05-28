@@ -18,6 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        staging {
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+        }
+        production {
+            applicationId "com.example.himanshu.kedditbyph"
+        }
+    }
 }
 
 dependencies {
