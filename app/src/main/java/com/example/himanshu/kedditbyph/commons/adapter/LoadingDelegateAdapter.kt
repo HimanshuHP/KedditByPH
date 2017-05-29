@@ -10,13 +10,12 @@ import com.example.himanshu.kedditbyph.commons.extensions.inflate
  */
 class LoadingDelegateAdapter :ViewTypeDelegateAdapter {
 
-    override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder  = TurnsViewHolder(parent)
+    override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder  = LoadingViewHolder(parent)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    class TurnsViewHolder(parent :ViewGroup) : RecyclerView.ViewHolder(parent.inflate(R.layout.news_item_loading)){
+    class LoadingViewHolder(parent :ViewGroup) : RecyclerView.ViewHolder(parent.inflate(R.layout.news_item_loading)){
 
     }
 }
