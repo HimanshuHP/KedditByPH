@@ -7,7 +7,7 @@ import rx.Observable
  * Created by himanshu on 29/05/17.
  */
 class NewsManager {
-    fun getNews():Observable<List<RedditNewsItem>>{
+    fun getNews(): Observable<List<RedditNewsItem>> {
         return Observable.create {
             subscriber ->
             val news = mutableListOf<RedditNewsItem>()

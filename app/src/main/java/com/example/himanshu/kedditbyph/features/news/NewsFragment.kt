@@ -2,6 +2,7 @@ package com.example.himanshu.kedditbyph.features.news
 
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import com.example.himanshu.kedditbyph.R
 import com.example.himanshu.kedditbyph.commons.extensions.inflate
 import com.example.himanshu.kedditbyph.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 
 
 /**
@@ -34,7 +37,16 @@ class NewsFragment : Fragment() {
     }
 
     private fun requestNews() {
-        //(news_list.adapter as NewsAdapter).addNews(news)
+        val subscription = newsManager.getNews()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { retrievedNews ->
+                            (news_list.adapter as NewsAdapter).addNews(retrievedNews)
+                        }, { e ->
+                    Snackbar.make(news_list, e.message ?: "", Snackbar.LENGTH_LONG).show()
+                }
+                )
     }
 
     private fun initAdapter() {
