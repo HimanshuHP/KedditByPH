@@ -1,9 +1,12 @@
-package com.example.himanshu.kedditbyph.commons.adapter
+package com.example.himanshu.kedditbyph.features.news.adapter
 
 import android.support.v4.util.SparseArrayCompat
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.example.himanshu.kedditbyph.commons.RedditNewsItem
+import com.example.himanshu.kedditbyph.commons.adapter.AdapterConstants
+import com.example.himanshu.kedditbyph.commons.adapter.ViewType
+import com.example.himanshu.kedditbyph.commons.adapter.ViewTypeDelegateAdapter
 
 /**
  * Created by himanshu on 28/05/17.
