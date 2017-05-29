@@ -3,12 +3,12 @@ package com.example.himanshu.kedditbyph.features.news
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.himanshu.kedditbyph.R
+import com.example.himanshu.kedditbyph.commons.RxBaseFragment
 import com.example.himanshu.kedditbyph.commons.extensions.inflate
 import com.example.himanshu.kedditbyph.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
@@ -19,7 +19,7 @@ import rx.schedulers.Schedulers
 /**
  * Created by himanshu on 28/05/17.
  */
-class NewsFragment : Fragment() {
+class NewsFragment : RxBaseFragment() {
 
     private val newsManager by lazy { NewsManager() }
 
@@ -47,6 +47,7 @@ class NewsFragment : Fragment() {
                     Snackbar.make(news_list, e.message ?: "", Snackbar.LENGTH_LONG).show()
                 }
                 )
+        subscriptions.add(subscription)
     }
 
     private fun initAdapter() {
