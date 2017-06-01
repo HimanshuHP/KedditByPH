@@ -1,6 +1,7 @@
 package com.example.himanshu.kedditbyph.features.news
 
-import com.example.himanshu.kedditbyph.api.RestAPI
+import com.example.himanshu.kedditbyph.api.NewsApi
+import com.example.himanshu.kedditbyph.api.NewsRestAPI
 import com.example.himanshu.kedditbyph.commons.RedditNews
 import com.example.himanshu.kedditbyph.commons.RedditNewsItem
 import rx.Observable
@@ -8,7 +9,7 @@ import rx.Observable
 /**
  * Created by himanshu on 29/05/17.
  */
-class NewsManager(private val api: RestAPI = RestAPI()) {
+class NewsManager(private val api: NewsApi = NewsRestAPI()) {
 
     fun getNews(after: String, limit: String = "10"): Observable<RedditNews> {
         return Observable.create {

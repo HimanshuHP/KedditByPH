@@ -6,12 +6,12 @@ package com.example.himanshu.kedditbyph.api
 class RedditNewsResponse(val data: RedditDataResponse)
 
 class RedditDataResponse(
-        val children: List<RedditChildrenResonse>,
+        val children: List<RedditChildrenResponse>,
         val after: String?,
         val before: String?
 )
 
-class RedditChildrenResonse(val data: RedditNewsDataResponse)
+class RedditChildrenResponse(val data: RedditNewsDataResponse)
 
 class RedditNewsDataResponse(
         val author: String,
