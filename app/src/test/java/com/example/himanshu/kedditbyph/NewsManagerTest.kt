@@ -97,4 +97,3 @@ class NewsManagerTest {
     }
 }
 
-inline fun <reified T : Any> mock(): T = Mockito.mock(T::class.java)
