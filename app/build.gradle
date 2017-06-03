@@ -19,6 +19,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
     productFlavors {
         staging {
             applicationIdSuffix ".staging"
@@ -28,6 +31,10 @@ android {
             applicationId "com.example.himanshu.kedditbyph"
         }
     }
+}
+
+kapt {
+    generateStubs = true
 }
 
 dependencies {

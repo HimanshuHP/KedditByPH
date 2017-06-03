@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.himanshu.kedditbyph.KedditApp
 import com.example.himanshu.kedditbyph.R
 import com.example.himanshu.kedditbyph.commons.InfiniteScrollListener
 import com.example.himanshu.kedditbyph.commons.RedditNews
@@ -16,6 +17,7 @@ import com.example.himanshu.kedditbyph.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
+import javax.inject.Inject
 
 
 /**
@@ -27,8 +29,15 @@ class NewsFragment : RxBaseFragment() {
         private val KEY_REDDIT_NEWS = "redditNews"
     }
 
-    private val newsManager by lazy { NewsManager() }
+    @Inject
+    lateinit var newsManager : NewsManager
+
     private var redditNews : RedditNews? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        KedditApp.newsComponent.inject(this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return container?.inflate(R.layout.news_fragment)
